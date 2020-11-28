@@ -1,5 +1,5 @@
 CREATE TABLE guest(email VARCHAR(255) PRIMARY KEY,
-    name VARCHAR(255), phone VARCHAR(20));
+    name VARCHAR(255), phone VARCHAR(20), register_date DATETIME);
 
 CREATE TABLE hotel(id VARCHAR(255) PRIMARY KEY,
                    name VARCHAR(255), stars INT);
@@ -9,6 +9,8 @@ CREATE TABLE room(hotel VARCHAR(255), room_number INT, room_type VARCHAR(50), co
 
 CREATE TABLE reservation(id INT PRIMARY KEY AUTO_INCREMENT, guest VARCHAR(255),
                   hotel VARCHAR(255), room INT, check_in_date DATE, check_out_date DATE);
+
+CREATE SEQUENCE HIBERNATE_SEQUENCE START WITH 2 INCREMENT BY 1;
 
 INSERT INTO guest(name, email, phone) VALUES('Andika', 'andika@gmail.com', '+62123567');
 INSERT INTO guest(name, email, phone) VALUES('Messi', 'messi@gmail.com', '+60123567');
