@@ -1,5 +1,6 @@
 package com.wibawanto.hotel.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -21,6 +22,7 @@ public class Room {
     @Id
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "hotel")
+    @JsonIgnore
     private Hotel hotel;
 
     @Column(nullable = false)
@@ -31,6 +33,7 @@ public class Room {
     private BigDecimal costPerNight;
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JsonIgnore
     private Reservation reservation;
 
     public void setReservation(Reservation reservation) {
