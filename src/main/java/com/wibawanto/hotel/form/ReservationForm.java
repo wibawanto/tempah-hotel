@@ -37,7 +37,7 @@ public class ReservationForm implements Serializable {
     private LocalDate checkInDate;
 
     @NotNull(message = "checkOutDate is mandatory")
-    private LocalDate checkOutDateh;
+    private LocalDate checkOutDate;
 
     public Guest extractGuest() {
         return new ReservationFormToGuestConverter().convert(this);
