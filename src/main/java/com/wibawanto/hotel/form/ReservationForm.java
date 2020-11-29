@@ -5,9 +5,7 @@ import com.wibawanto.hotel.domain.Guest;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 
@@ -18,9 +16,12 @@ import java.time.LocalDate;
 @Setter
 public class ReservationForm implements Serializable {
     @NotBlank(message = "guestEmail is mandatory")
+    @Email(message = "Email should be valid")
     private String guestEmail;
 
     @NotBlank(message = "guestName is mandatory")
+    @Size(min = 2, max = 100, message
+            = "guestName must be between 2 and 100 characters")
     private String guestName;
 
     @NotBlank(message = "guestPhone is mandatory")
@@ -36,7 +37,7 @@ public class ReservationForm implements Serializable {
     private LocalDate checkInDate;
 
     @NotNull(message = "checkOutDate is mandatory")
-    private LocalDate checkOutDate;
+    private LocalDate checkOutDateh;
 
     public Guest extractGuest() {
         return new ReservationFormToGuestConverter().convert(this);
