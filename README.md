@@ -22,7 +22,7 @@ After website run open webpage ```http://localhost:8080/swagger-ui.html```
 ```
 * All parameters are available in ```http://localhost:8080/swagger-ui.html```
 
-#Technology
+# Tech Stack
 * Spring Boot
 * JPA + H2 Database
 * Lombok
