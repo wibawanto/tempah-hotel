@@ -1,4 +1,5 @@
 # tempah-hotel
+Pet codes for Hotel Reservation
 
 # How to run
 Navigate to the root of the project via command line and execute the command: ```mvn spring-boot:run```
